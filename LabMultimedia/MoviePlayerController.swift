@@ -8,7 +8,13 @@
 
 import Foundation
 import AVKit
+import AVFoundation
 
 class MoviePlayerController: AVPlayerViewController {
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.player = AVPlayer.init(URL: NSURL(string: "https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4")!)
+    }
 }
