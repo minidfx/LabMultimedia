@@ -16,5 +16,6 @@ class MoviePlayerController: AVPlayerViewController {
         super.viewDidLoad()
         
         self.player = AVPlayer.init(URL: NSURL(string: "https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4")!)
+        self.player?.play()
     }
 }
