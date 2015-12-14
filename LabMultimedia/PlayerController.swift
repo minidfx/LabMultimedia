@@ -10,6 +10,11 @@ import Foundation
 import UIKit
 
 class PlayerController: UIViewController {
+ 
+    @IBAction func touchDownClose(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
     
-    @IBOutlet weak var CloseButton: UIButton!
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    }
 }
