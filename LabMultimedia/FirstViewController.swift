@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AVFoundation
+import Foundation
 
 class FirstViewController: UIViewController {
 
@@ -20,6 +22,12 @@ class FirstViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    @IBAction func runMovie(sender: AnyObject) {
+        let url = "http://jplayer.org/video/m4v/Big_Buck_Bunny_Trailer.m4v"
+        let playerItem = AVPlayerItem(URL: NSURL(string:url)!)
+        let player = AVPlayer(playerItem:playerItem)
+        
+        player.play()
+    }
 }
 
