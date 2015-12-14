@@ -8,22 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		C2954C3D1C1EB64000BCB8F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2954C3C1C1EB64000BCB8F0 /* AppDelegate.swift */; };
-		C2954C3F1C1EB64000BCB8F0 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2954C3E1C1EB64000BCB8F0 /* FirstViewController.swift */; };
 		C2954C411C1EB64000BCB8F0 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2954C401C1EB64000BCB8F0 /* SecondViewController.swift */; };
 		C2954C441C1EB64000BCB8F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2954C421C1EB64000BCB8F0 /* Main.storyboard */; };
 		C2954C461C1EB64000BCB8F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2954C451C1EB64000BCB8F0 /* Assets.xcassets */; };
 		C2954C491C1EB64000BCB8F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2954C471C1EB64000BCB8F0 /* LaunchScreen.storyboard */; };
+		C2954C531C1EC5BE00BCB8F0 /* MovieController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2954C521C1EC5BE00BCB8F0 /* MovieController.swift */; };
+		C2954C551C1EC9BC00BCB8F0 /* MoviePlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2954C541C1EC9BC00BCB8F0 /* MoviePlayerController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C2954C391C1EB64000BCB8F0 /* LabMultimedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LabMultimedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2954C3C1C1EB64000BCB8F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C2954C3E1C1EB64000BCB8F0 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		C2954C401C1EB64000BCB8F0 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		C2954C431C1EB64000BCB8F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C2954C451C1EB64000BCB8F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C2954C481C1EB64000BCB8F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C2954C4A1C1EB64000BCB8F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C2954C521C1EC5BE00BCB8F0 /* MovieController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieController.swift; sourceTree = "<group>"; };
+		C2954C541C1EC9BC00BCB8F0 /* MoviePlayerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviePlayerController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,12 +59,13 @@
 			isa = PBXGroup;
 			children = (
 				C2954C3C1C1EB64000BCB8F0 /* AppDelegate.swift */,
-				C2954C3E1C1EB64000BCB8F0 /* FirstViewController.swift */,
 				C2954C401C1EB64000BCB8F0 /* SecondViewController.swift */,
 				C2954C421C1EB64000BCB8F0 /* Main.storyboard */,
 				C2954C451C1EB64000BCB8F0 /* Assets.xcassets */,
 				C2954C471C1EB64000BCB8F0 /* LaunchScreen.storyboard */,
 				C2954C4A1C1EB64000BCB8F0 /* Info.plist */,
+				C2954C521C1EC5BE00BCB8F0 /* MovieController.swift */,
+				C2954C541C1EC9BC00BCB8F0 /* MoviePlayerController.swift */,
 			);
 			path = LabMultimedia;
 			sourceTree = "<group>";
@@ -141,7 +144,8 @@
 			files = (
 				C2954C411C1EB64000BCB8F0 /* SecondViewController.swift in Sources */,
 				C2954C3D1C1EB64000BCB8F0 /* AppDelegate.swift in Sources */,
-				C2954C3F1C1EB64000BCB8F0 /* FirstViewController.swift in Sources */,
+				C2954C531C1EC5BE00BCB8F0 /* MovieController.swift in Sources */,
+				C2954C551C1EC9BC00BCB8F0 /* MoviePlayerController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,6 +295,7 @@
 				C2954C4F1C1EB64000BCB8F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -5,53 +5,46 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
-        <!--Movies-->
-        <scene sceneID="hNz-n2-bh7">
+        <!--Movie-->
+        <scene sceneID="34U-Y0-3lV">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="LabMultimedia" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Movie" id="GNE-Df-DCi" customClass="MovieController" customModule="LabMultimedia" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
-                        <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
+                        <viewControllerLayoutGuide type="top" id="aFE-gv-9a3"/>
+                        <viewControllerLayoutGuide type="bottom" id="AHW-EU-QRj"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
+                    <view key="view" contentMode="scaleToFill" id="iQ7-kG-4Wy">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="T66-qw-x1c">
-                                <rect key="frame" x="228" y="276" width="144" height="48"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="4zS-Wv-2uy">
-                                        <rect key="frame" x="0.0" y="0.0" width="144" height="48"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="oeN-ju-t3g">
-                                                <rect key="frame" x="0.0" y="0.0" width="144" height="48"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YJh-a7-AA0">
-                                                        <rect key="frame" x="0.0" y="0.0" width="144" height="48"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                        <state key="normal" title="Play Movie"/>
-                                                        <connections>
-                                                            <action selector="runMovie:" destination="9pv-A4-QxB" eventType="touchDown" id="KKV-4T-vLF"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KC2-Fw-E6Z">
+                                <rect key="frame" x="205" y="279" width="191" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Play movie"/>
+                                <connections>
+                                    <segue destination="F7a-b3-aye" kind="presentation" identifier="runMovie" id="nn3-i6-2OV"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="T66-qw-x1c" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" id="JZ9-md-WKO"/>
-                            <constraint firstItem="T66-qw-x1c" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="x64-GZ-N5R"/>
+                            <constraint firstItem="KC2-Fw-E6Z" firstAttribute="centerX" secondItem="iQ7-kG-4Wy" secondAttribute="centerX" id="0rT-i7-IOu"/>
+                            <constraint firstItem="KC2-Fw-E6Z" firstAttribute="centerY" secondItem="iQ7-kG-4Wy" secondAttribute="centerY" id="yrf-23-a0o"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Movies" image="tab_movies" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Movie" image="tab_movies" id="9Ld-eY-Ch8"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iOA-zW-zwC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="-320"/>
+            <point key="canvasLocation" x="729" y="-431"/>
+        </scene>
+        <!--AV Player View Controller-->
+        <scene sceneID="D0u-KZ-gh0">
+            <objects>
+                <avPlayerViewController videoGravity="AVLayerVideoGravityResizeAspect" id="F7a-b3-aye" customClass="MoviePlayerController" customModule="LabMultimedia" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C6f-p1-Tdp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1508" y="-431"/>
         </scene>
         <!--Audio-->
         <scene sceneID="wg7-f3-ORb">
@@ -96,8 +89,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="GNE-Df-DCi" kind="relationship" relationship="viewControllers" id="4sp-67-qkG"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
