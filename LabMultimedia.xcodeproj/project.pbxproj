@@ -39,6 +39,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C237BCDD1C1ED6CC00967BD9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C237BCDE1C1ED6DC00967BD9 /* AudioModel.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		C2954C301C1EB64000BCB8F0 = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +66,7 @@
 		C2954C3B1C1EB64000BCB8F0 /* LabMultimedia */ = {
 			isa = PBXGroup;
 			children = (
+				C237BCDD1C1ED6CC00967BD9 /* Models */,
 				C2954C3C1C1EB64000BCB8F0 /* AppDelegate.swift */,
 				C2954C401C1EB64000BCB8F0 /* AudioController.swift */,
 				C2954C421C1EB64000BCB8F0 /* Main.storyboard */,

@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Movie-->
@@ -47,13 +48,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="XNm-X4-erj">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SongCell" id="XNm-X4-erj">
                                 <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XNm-X4-erj" id="hbM-CC-BMI">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="A song title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0pK-QO-zHI">
+                                            <rect key="frame" x="8" y="11" width="386" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="0pK-QO-zHI" firstAttribute="top" secondItem="hbM-CC-BMI" secondAttribute="topMargin" id="3sn-fj-a6k"/>
+                                        <constraint firstItem="0pK-QO-zHI" firstAttribute="leading" secondItem="hbM-CC-BMI" secondAttribute="leadingMargin" id="IW2-Yz-G3Q"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="0pK-QO-zHI" secondAttribute="bottom" id="Mgk-fQ-1d8"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="0pK-QO-zHI" secondAttribute="trailing" id="Wue-ae-AHb"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="0pK-QO-zHI" secondAttribute="trailing" id="u6M-CX-Vry"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="C5w-Ok-Zln" kind="presentation" id="jYj-rf-fCB"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -62,10 +81,31 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Audio" image="tab_audio" id="qUu-Wt-Fev"/>
+                    <connections>
+                        <outlet property="mainTableView" destination="5Ow-qL-jpI" id="d2M-9l-Upi"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yo1-yu-6Dg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="740" y="324"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="yZJ-Tj-FI3">
+            <objects>
+                <viewController id="C5w-Ok-Zln" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xrs-CE-YZ7"/>
+                        <viewControllerLayoutGuide type="bottom" id="BOa-Zy-LbQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AdA-Yj-o8p">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MS5-uo-5GB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1439" y="324"/>
         </scene>
         <!--AV Player View Controller-->
         <scene sceneID="D0u-KZ-gh0">
