@@ -12,16 +12,16 @@ import MediaPlayer
 class AudioController: UITableViewController {
     
     var mediaItems: [MPMediaItem]?
-    var items: [String] = ["Song1", "Song2"]
     
     @IBOutlet var mainTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.mediaItems = MPMediaQuery.songsQuery().items
         self.mainTableView.dataSource = self
         self.mainTableView.delegate = self
+        
+        self.mediaItems = MPMediaQuery.songsQuery().items
         
         NSLog("AudioController loaded.")
     }
@@ -36,13 +36,16 @@ class AudioController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.items.count
+        return (self.mediaItems?.count)!
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("SongCell", forIndexPath: indexPath)
-        cell.textLabel?.text = self.items[indexPath.row]
         
+        let mediaItem = self.mediaItems![indexPath.row]
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier("SongCell", forIndexPath: indexPath)
+        cell.textLabel?.text = mediaItem.valueForProperty(MPMediaItemPropertyTitle) as? String
+
         return cell
     }
 }

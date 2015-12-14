@@ -14,6 +14,7 @@
 		C2954C491C1EB64000BCB8F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2954C471C1EB64000BCB8F0 /* LaunchScreen.storyboard */; };
 		C2954C531C1EC5BE00BCB8F0 /* MovieController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2954C521C1EC5BE00BCB8F0 /* MovieController.swift */; };
 		C2954C551C1EC9BC00BCB8F0 /* MoviePlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2954C541C1EC9BC00BCB8F0 /* MoviePlayerController.swift */; };
+		C2B825531C1F1518005E7133 /* PlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B825521C1F1518005E7133 /* PlayerController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		C2954C4A1C1EB64000BCB8F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C2954C521C1EC5BE00BCB8F0 /* MovieController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieController.swift; sourceTree = "<group>"; };
 		C2954C541C1EC9BC00BCB8F0 /* MoviePlayerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviePlayerController.swift; sourceTree = "<group>"; };
+		C2B825521C1F1518005E7133 /* PlayerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,14 +41,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C237BCDD1C1ED6CC00967BD9 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				C237BCDE1C1ED6DC00967BD9 /* AudioModel.swift */,
-			);
-			name = Models;
-			sourceTree = "<group>";
-		};
 		C2954C301C1EB64000BCB8F0 = {
 			isa = PBXGroup;
 			children = (
@@ -66,7 +60,6 @@
 		C2954C3B1C1EB64000BCB8F0 /* LabMultimedia */ = {
 			isa = PBXGroup;
 			children = (
-				C237BCDD1C1ED6CC00967BD9 /* Models */,
 				C2954C3C1C1EB64000BCB8F0 /* AppDelegate.swift */,
 				C2954C401C1EB64000BCB8F0 /* AudioController.swift */,
 				C2954C421C1EB64000BCB8F0 /* Main.storyboard */,
@@ -75,6 +68,7 @@
 				C2954C4A1C1EB64000BCB8F0 /* Info.plist */,
 				C2954C521C1EC5BE00BCB8F0 /* MovieController.swift */,
 				C2954C541C1EC9BC00BCB8F0 /* MoviePlayerController.swift */,
+				C2B825521C1F1518005E7133 /* PlayerController.swift */,
 			);
 			path = LabMultimedia;
 			sourceTree = "<group>";
@@ -154,6 +148,7 @@
 				C2954C411C1EB64000BCB8F0 /* AudioController.swift in Sources */,
 				C2954C3D1C1EB64000BCB8F0 /* AppDelegate.swift in Sources */,
 				C2954C531C1EC5BE00BCB8F0 /* MovieController.swift in Sources */,
+				C2B825531C1F1518005E7133 /* PlayerController.swift in Sources */,
 				C2954C551C1EC9BC00BCB8F0 /* MoviePlayerController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
