@@ -40,7 +40,7 @@
             </objects>
             <point key="canvasLocation" x="729" y="-431"/>
         </scene>
-        <!--Audio-->
+        <!--Audio Controller-->
         <scene sceneID="2ME-Fn-AAf">
             <objects>
                 <tableViewController id="7im-tw-GDe" customClass="AudioController" customModule="LabMultimedia" customModuleProvider="target" sceneMemberID="viewController">
@@ -50,7 +50,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SongCell" id="XNm-X4-erj">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XNm-X4-erj" id="hbM-CC-BMI">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -66,14 +66,14 @@
                             <outlet property="delegate" destination="7im-tw-GDe" id="372-oz-mNq"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Audio" image="tab_audio" id="qUu-Wt-Fev"/>
+                    <navigationItem key="navigationItem" id="aPO-rH-iLy"/>
                     <connections>
                         <outlet property="mainTableView" destination="5Ow-qL-jpI" id="d2M-9l-Upi"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yo1-yu-6Dg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="740" y="324"/>
+            <point key="canvasLocation" x="1552" y="324"/>
         </scene>
         <!--Player Controller-->
         <scene sceneID="yZJ-Tj-FI3">
@@ -102,25 +102,6 @@
                                     <constraint firstAttribute="width" constant="150" id="lcV-Gx-Qf5"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="7C8-4A-P9g">
-                                <rect key="frame" x="260" y="516" width="102" height="30"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7me-Ub-rQh">
-                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
-                                        <state key="normal" title="Play"/>
-                                        <connections>
-                                            <action selector="touchDownPlay:" destination="C5w-Ok-Zln" eventType="touchDown" id="N1n-Sk-Zx6"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dic-QG-XKq">
-                                        <rect key="frame" x="70" y="0.0" width="32" height="30"/>
-                                        <state key="normal" title="Stop"/>
-                                        <connections>
-                                            <action selector="touchDownStop:" destination="C5w-Ok-Zln" eventType="touchDown" id="r3c-x6-586"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="qlJ-Ft-ki8">
                                 <rect key="frame" x="51" y="387" width="89" height="83"/>
                                 <subviews>
@@ -153,6 +134,33 @@
                                         <exclude reference="H1z-Tg-nna"/>
                                     </mask>
                                 </variation>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="7C8-4A-P9g">
+                                <rect key="frame" x="220" y="495" width="160" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7me-Ub-rQh">
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="6Iq-L8-7KL"/>
+                                            <constraint firstAttribute="width" constant="60" id="XWQ-yo-Wnh"/>
+                                        </constraints>
+                                        <state key="normal" title="Play" image="iu"/>
+                                        <connections>
+                                            <action selector="touchDownPlay:" destination="C5w-Ok-Zln" eventType="touchDown" id="N1n-Sk-Zx6"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dic-QG-XKq">
+                                        <rect key="frame" x="100" y="0.0" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="LM5-Bd-NCI"/>
+                                            <constraint firstAttribute="height" constant="60" id="tpR-mA-B3w"/>
+                                        </constraints>
+                                        <state key="normal" title="Stop" image="iu-2"/>
+                                        <connections>
+                                            <action selector="touchDownStop:" destination="C5w-Ok-Zln" eventType="touchDown" id="r3c-x6-586"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -194,7 +202,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MS5-uo-5GB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1503" y="324"/>
+            <point key="canvasLocation" x="2315" y="324"/>
         </scene>
         <!--AV Player View Controller-->
         <scene sceneID="D0u-KZ-gh0">
@@ -216,15 +224,36 @@
                     </tabBar>
                     <connections>
                         <segue destination="GNE-Df-DCi" kind="relationship" relationship="viewControllers" id="4sp-67-qkG"/>
-                        <segue destination="7im-tw-GDe" kind="relationship" relationship="viewControllers" id="Fdm-bm-mNW"/>
+                        <segue destination="vBv-6b-RTk" kind="relationship" relationship="viewControllers" id="Fdm-bm-mNW"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
+        <!--Audio-->
+        <scene sceneID="PrN-Qi-Uqc">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vBv-6b-RTk" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Audio" image="tab_audio" id="qUu-Wt-Fev"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ned-ui-aEa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="7im-tw-GDe" kind="relationship" relationship="rootViewController" id="qvU-2L-HDv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X4x-PV-vBT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="740" y="324"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="iu" width="350" height="350"/>
+        <image name="iu-2" width="350" height="350"/>
         <image name="tab_audio" width="30" height="30"/>
         <image name="tab_movies" width="30" height="30"/>
     </resources>
