@@ -28,15 +28,9 @@ class AudioController: UITableViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let destinationVC = segue.destinationViewController as? PlayerController {
-
             let mediaItem = self.mediaItems![(self.mainTableView.indexPathForSelectedRow?.row)!]
             destinationVC.mediaItem = mediaItem
         }
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -52,8 +46,11 @@ class AudioController: UITableViewController {
         let mediaItem = self.mediaItems![indexPath.row]
         
         let cell = tableView.dequeueReusableCellWithIdentifier("SongCell", forIndexPath: indexPath)
+        
         cell.textLabel?.text = mediaItem.valueForProperty(MPMediaItemPropertyTitle) as? String
-
+        cell.imageView?.image = mediaItem.artwork?.imageWithSize(CGSize(width: 20, height: 20))
+        cell.detailTextLabel?.text = mediaItem.valueForProperty(MPMediaItemPropertyArtist) as? String
+        
         return cell
     }
 }
