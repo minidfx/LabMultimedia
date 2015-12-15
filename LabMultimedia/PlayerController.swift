@@ -11,8 +11,6 @@ import UIKit
 import MediaPlayer
 
 class PlayerController: UIViewController {
-    
-
     let player = MPMusicPlayerController.applicationMusicPlayer()
     var mediaItem: MPMediaItem?
     var mediaItems: [MPMediaItem]?
