@@ -211,6 +211,10 @@
                         <outlet property="albumLabel" destination="f1Z-Uk-Eo9" id="kXJ-J1-j5y"/>
                         <outlet property="artistLabel" destination="efc-cM-5VJ" id="qjd-1R-1ok"/>
                         <outlet property="artworkImage" destination="Bfv-nG-6My" id="OAQ-uK-eO9"/>
+                        <outlet property="nextButton" destination="4pS-Qp-Xhx" id="zR4-0c-fC7"/>
+                        <outlet property="playButton" destination="go4-Xa-Fgs" id="Qdn-mT-2PY"/>
+                        <outlet property="previousButton" destination="7me-Ub-rQh" id="Iyu-ib-AHT"/>
+                        <outlet property="stopButton" destination="dic-QG-XKq" id="bFF-yt-dx5"/>
                         <outlet property="titleLabel" destination="yAJ-bF-yc4" id="Whm-JI-BcJ"/>
                     </connections>
                 </viewController>

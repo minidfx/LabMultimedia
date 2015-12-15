@@ -12,55 +12,75 @@ import MediaPlayer
 
 class PlayerController: UIViewController {
     
+
     let player = MPMusicPlayerController.applicationMusicPlayer()
-    var isPlaying = Bool()
     var mediaItem: MPMediaItem?
-    
+    var mediaItems: [MPMediaItem]?
+
+    @IBOutlet weak var playButton: UIButton!
+    @IBOutlet weak var stopButton: UIButton!
     @IBOutlet weak var albumLabel: UILabel!
+    @IBOutlet weak var previousButton: UIButton!
     @IBOutlet weak var artistLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var artworkImage: UIImageView!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        let collection = MPMediaItemCollection.init(items: [self.mediaItem!])
-        
-        self.player.setQueueWithItemCollection(collection)
-        self.displaySongInfo()
-    }
-    
     @IBAction func touchDownStop(sender: AnyObject) {
-        self.stop()
+        self.player.stop()
+        
+        self.playButton.enabled = true
+        self.stopButton.enabled = false
     }
     
     @IBAction func touchDownPlay(sender: AnyObject) {
-        self.play()
+        self.player.play()
+        
+        self.playButton.enabled = false
+        self.stopButton.enabled = true
+    }
+    
+    @IBAction func touchDownPrevious(sender: AnyObject) {
+        self.player.skipToPreviousItem()
+        let item = self.player.nowPlayingItem
+        
+        self.displaySongInfo(item!)
+        self.determineButtonStates()
+    }
+    
+    @IBAction func touchDownNext(sender: AnyObject) {
+        self.player.skipToNextItem()
+        let item = self.player.nowPlayingItem
+        
+        self.displaySongInfo(item!)
+        self.determineButtonStates()
     }
     
     @IBAction func touchDownClose(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    func displaySongInfo() {
-        self.titleLabel.text = self.mediaItem?.valueForProperty(MPMediaItemPropertyTitle) as? String
-        self.artistLabel.text = self.mediaItem?.valueForProperty(MPMediaItemPropertyArtist) as? String
-        self.albumLabel.text = self.mediaItem?.valueForProperty(MPMediaItemPropertyAlbumTitle) as? String
-        self.artworkImage.image = self.mediaItem?.artwork?.imageWithSize(CGSize(width: 150, height: 150))
-    }
-    
-    func stop() {
-        self.player.stop()
-    }
-    
-    func play() {
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
-        if self.isPlaying {
-            self.player.pause()
-            self.isPlaying = false
-        } else {
-            self.player.play()
-            self.isPlaying = true
-        }
+        let collection = MPMediaItemCollection.init(items: self.mediaItems!)
+        
+        self.player.setQueueWithItemCollection(collection)
+        self.player.nowPlayingItem = self.mediaItem!
+        self.displaySongInfo(self.mediaItem!)
+        self.determineButtonStates()
+    }
+    
+    func determineButtonStates() {
+        self.nextButton.enabled = self.player.indexOfNowPlayingItem + 1 < self.mediaItems?.count
+        self.previousButton.enabled = self.player.indexOfNowPlayingItem > 0
+    }
+    
+    func displaySongInfo(item: MPMediaItem) {
+        
+        self.titleLabel.text = item.valueForProperty(MPMediaItemPropertyTitle) as? String
+        self.artistLabel.text = item.valueForProperty(MPMediaItemPropertyArtist) as? String
+        self.albumLabel.text = item.valueForProperty(MPMediaItemPropertyAlbumTitle) as? String
+        self.artworkImage.image = item.artwork?.imageWithSize(CGSize(width: 150, height: 150))
     }
 }

@@ -22,14 +22,14 @@ class AudioController: UITableViewController {
         self.mainTableView.delegate = self
         
         self.mediaItems = MPMediaQuery.songsQuery().items
-        
-        NSLog("AudioController loaded.")
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let destinationVC = segue.destinationViewController as? PlayerController {
             let mediaItem = self.mediaItems![(self.mainTableView.indexPathForSelectedRow?.row)!]
+            
             destinationVC.mediaItem = mediaItem
+            destinationVC.mediaItems = self.mediaItems
         }
     }
     
@@ -42,7 +42,6 @@ class AudioController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
         let mediaItem = self.mediaItems![indexPath.row]
         
         let cell = tableView.dequeueReusableCellWithIdentifier("SongCell", forIndexPath: indexPath)
