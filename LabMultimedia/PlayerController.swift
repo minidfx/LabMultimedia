@@ -24,6 +24,9 @@ class PlayerController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let collection = MPMediaItemCollection.init(items: [self.mediaItem!])
+        
+        self.player.setQueueWithItemCollection(collection)
         self.displaySongInfo()
     }
     
