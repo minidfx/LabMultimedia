@@ -25,6 +25,14 @@ class AudioController: UITableViewController {
         
         NSLog("AudioController loaded.")
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let destinationVC = segue.destinationViewController as? PlayerController {
+
+            let mediaItem = self.mediaItems![(self.mainTableView.indexPathForSelectedRow?.row)!]
+            destinationVC.mediaItem = mediaItem
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
