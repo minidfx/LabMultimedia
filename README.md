@@ -1,3 +1,3 @@
 # LabMultimedia
 
-A basic application as example for integrating audio and video using ```UINavigationControler``` and some simple gestures.
+A basic application as example for integrating audio and video using ```UI*Controler``` and some simple gestures.
