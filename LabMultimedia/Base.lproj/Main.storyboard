@@ -70,16 +70,31 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="3B3-gI-fBH" firstAttribute="centerX" secondItem="n3A-4G-AcP" secondAttribute="centerX" id="BkW-qo-eqw"/>
                             <constraint firstItem="3B3-gI-fBH" firstAttribute="top" secondItem="QRi-Xm-XAj" secondAttribute="bottom" constant="154" id="CkE-R2-bkI"/>
                             <constraint firstItem="NYC-x9-3wN" firstAttribute="centerX" secondItem="n3A-4G-AcP" secondAttribute="centerX" id="VfH-o2-9Md"/>
                             <constraint firstItem="r1d-gh-c0i" firstAttribute="top" secondItem="NYC-x9-3wN" secondAttribute="bottom" constant="231" id="YWx-yN-JAD"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Krl-lu-vuq" appends="YES" id="6HG-ww-g0l"/>
+                            <outletCollection property="gestureRecognizers" destination="LsK-SE-3AS" appends="YES" id="wQB-Lw-J3K"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="aPO-rH-iLy"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dFf-Gd-HXL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="Krl-lu-vuq">
+                    <connections>
+                        <segue destination="7im-tw-GDe" kind="show" id="T82-E7-Met"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="LsK-SE-3AS">
+                    <connections>
+                        <segue destination="GNE-Df-DCi" kind="show" id="W6l-46-5bU"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="704" y="50"/>
         </scene>
@@ -298,4 +313,8 @@
         <image name="Actions-media-skip-backward-icon" width="256" height="256"/>
         <image name="Actions-media-skip-forward-icon" width="256" height="256"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="c3i-hi-sE2"/>
+        <segue reference="hKe-bQ-aCB"/>
+    </inferredMetricsTieBreakers>
 </document>
