@@ -68,14 +68,35 @@
                                     <segue destination="GNE-Df-DCi" kind="show" identifier="displayVideo" id="c3i-hi-sE2"/>
                                 </connections>
                             </button>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s7F-fD-hbE">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem systemItem="flexibleSpace" id="R6N-Z6-XVt"/>
+                                    <barButtonItem title="Music" id="wH5-H1-hzg">
+                                        <connections>
+                                            <segue destination="7im-tw-GDe" kind="show" id="hqZ-aS-MkI"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="20" systemItem="fixedSpace" id="3mV-Cs-fdi"/>
+                                    <barButtonItem title="Video" id="krW-Gd-Fsl">
+                                        <connections>
+                                            <segue destination="GNE-Df-DCi" kind="show" id="LTC-9d-VKn"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="flexibleSpace" id="Zf8-JS-9AN"/>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="s7F-fD-hbE" secondAttribute="trailing" constant="-20" id="0Eq-HI-zMR"/>
                             <constraint firstItem="3B3-gI-fBH" firstAttribute="centerX" secondItem="n3A-4G-AcP" secondAttribute="centerX" id="BkW-qo-eqw"/>
                             <constraint firstItem="3B3-gI-fBH" firstAttribute="top" secondItem="QRi-Xm-XAj" secondAttribute="bottom" constant="154" id="CkE-R2-bkI"/>
                             <constraint firstItem="NYC-x9-3wN" firstAttribute="centerX" secondItem="n3A-4G-AcP" secondAttribute="centerX" id="VfH-o2-9Md"/>
                             <constraint firstItem="r1d-gh-c0i" firstAttribute="top" secondItem="NYC-x9-3wN" secondAttribute="bottom" constant="231" id="YWx-yN-JAD"/>
+                            <constraint firstItem="r1d-gh-c0i" firstAttribute="top" secondItem="s7F-fD-hbE" secondAttribute="bottom" id="mut-qd-EPj"/>
+                            <constraint firstItem="s7F-fD-hbE" firstAttribute="leading" secondItem="n3A-4G-AcP" secondAttribute="leadingMargin" constant="-20" id="wQj-nm-4Zr"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="Krl-lu-vuq" appends="YES" id="6HG-ww-g0l"/>
@@ -83,6 +104,7 @@
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" id="aPO-rH-iLy"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dFf-Gd-HXL" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="right" id="Krl-lu-vuq">
@@ -315,6 +337,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="c3i-hi-sE2"/>
-        <segue reference="hKe-bQ-aCB"/>
+        <segue reference="hqZ-aS-MkI"/>
     </inferredMetricsTieBreakers>
 </document>
