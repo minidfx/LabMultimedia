@@ -1,2 +1,3 @@
 # LabMultimedia
-A basic repo for integrating audio and video in iOS using Swift
+
+A basic application as example for integrating audio and video using ```UINavigationControler``` and some simple gestures.
