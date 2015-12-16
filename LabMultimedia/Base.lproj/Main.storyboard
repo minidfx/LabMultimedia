@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vBv-6b-RTk">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -10,7 +10,7 @@
         <!--Movie-->
         <scene sceneID="34U-Y0-3lV">
             <objects>
-                <viewController title="Movie" id="GNE-Df-DCi" customClass="MovieController" customModule="LabMultimedia" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Movie" id="GNE-Df-DCi" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aFE-gv-9a3"/>
                         <viewControllerLayoutGuide type="bottom" id="AHW-EU-QRj"/>
@@ -34,11 +34,54 @@
                             <constraint firstItem="KC2-Fw-E6Z" firstAttribute="centerY" secondItem="iQ7-kG-4Wy" secondAttribute="centerY" id="yrf-23-a0o"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Movie" image="tab_movies" id="9Ld-eY-Ch8"/>
+                    <navigationItem key="navigationItem" id="1EY-nd-4Wh"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iOA-zW-zwC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="729" y="-431"/>
+            <point key="canvasLocation" x="1453" y="-433"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="a7I-zz-GWX">
+            <objects>
+                <viewController id="a4o-aP-07S" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QRi-Xm-XAj"/>
+                        <viewControllerLayoutGuide type="bottom" id="r1d-gh-c0i"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="n3A-4G-AcP">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3B3-gI-fBH">
+                                <rect key="frame" x="222" y="218" width="156" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Play Music"/>
+                                <connections>
+                                    <segue destination="7im-tw-GDe" kind="show" identifier="displayMusic" id="hKe-bQ-aCB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NYC-x9-3wN">
+                                <rect key="frame" x="222" y="339" width="157" height="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Play Video"/>
+                                <connections>
+                                    <segue destination="GNE-Df-DCi" kind="show" identifier="displayVideo" id="c3i-hi-sE2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3B3-gI-fBH" firstAttribute="centerX" secondItem="n3A-4G-AcP" secondAttribute="centerX" id="BkW-qo-eqw"/>
+                            <constraint firstItem="3B3-gI-fBH" firstAttribute="top" secondItem="QRi-Xm-XAj" secondAttribute="bottom" constant="154" id="CkE-R2-bkI"/>
+                            <constraint firstItem="NYC-x9-3wN" firstAttribute="centerX" secondItem="n3A-4G-AcP" secondAttribute="centerX" id="VfH-o2-9Md"/>
+                            <constraint firstItem="r1d-gh-c0i" firstAttribute="top" secondItem="NYC-x9-3wN" secondAttribute="bottom" constant="231" id="YWx-yN-JAD"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="aPO-rH-iLy"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dFf-Gd-HXL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="704" y="50"/>
         </scene>
         <!--Audio Controller-->
         <scene sceneID="2ME-Fn-AAf">
@@ -66,14 +109,14 @@
                             <outlet property="delegate" destination="7im-tw-GDe" id="372-oz-mNq"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="aPO-rH-iLy"/>
+                    <navigationItem key="navigationItem" id="Z0h-xz-5De"/>
                     <connections>
                         <outlet property="mainTableView" destination="5Ow-qL-jpI" id="d2M-9l-Upi"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yo1-yu-6Dg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1552" y="324"/>
+            <point key="canvasLocation" x="1453" y="268"/>
         </scene>
         <!--Player Controller-->
         <scene sceneID="yZJ-Tj-FI3">
@@ -101,19 +144,19 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="titleLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yAJ-bF-yc4">
                                         <rect key="frame" x="0.0" y="0.0" width="89" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="artistLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="efc-cM-5VJ">
                                         <rect key="frame" x="0.0" y="31" width="89" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="albumLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f1Z-Uk-Eo9">
                                         <rect key="frame" x="0.0" y="62" width="89" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -220,7 +263,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MS5-uo-5GB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2403" y="324"/>
+            <point key="canvasLocation" x="2246" y="268"/>
         </scene>
         <!--AV Player View Controller-->
         <scene sceneID="D0u-KZ-gh0">
@@ -228,32 +271,12 @@
                 <avPlayerViewController videoGravity="AVLayerVideoGravityResizeAspect" id="F7a-b3-aye" customClass="MoviePlayerController" customModule="LabMultimedia" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C6f-p1-Tdp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1508" y="-431"/>
+            <point key="canvasLocation" x="2246" y="-433"/>
         </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="yl2-sM-qoP">
-            <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
-                        <rect key="frame" x="0.0" y="975" width="768" height="49"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="GNE-Df-DCi" kind="relationship" relationship="viewControllers" id="4sp-67-qkG"/>
-                        <segue destination="vBv-6b-RTk" kind="relationship" relationship="viewControllers" id="Fdm-bm-mNW"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="0.0" y="0.0"/>
-        </scene>
-        <!--Audio-->
+        <!--MainNavigationController-->
         <scene sceneID="PrN-Qi-Uqc">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vBv-6b-RTk" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Audio" image="tab_audio" id="qUu-Wt-Fev"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vBv-6b-RTk" userLabel="MainNavigationController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ned-ui-aEa">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -261,12 +284,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="7im-tw-GDe" kind="relationship" relationship="rootViewController" id="qvU-2L-HDv"/>
+                        <segue destination="a4o-aP-07S" kind="relationship" relationship="rootViewController" id="neC-eU-H5Y"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X4x-PV-vBT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="740" y="324"/>
+            <point key="canvasLocation" x="-33" y="50"/>
         </scene>
     </scenes>
     <resources>
@@ -274,7 +297,5 @@
         <image name="Actions-media-playback-stop-icon" width="256" height="256"/>
         <image name="Actions-media-skip-backward-icon" width="256" height="256"/>
         <image name="Actions-media-skip-forward-icon" width="256" height="256"/>
-        <image name="tab_audio" width="30" height="30"/>
-        <image name="tab_movies" width="30" height="30"/>
     </resources>
 </document>
